@@ -5,7 +5,7 @@ const passport = require("passport");
 exports.registerUser = (req, res) => {
   UserModel.findOne({ username: req.body.username }, async (err, doc) => {
     if (err) throw err;
-    if (doc) res.send("User Already Exists");
+    if (doc) res.status(409).send("User Already Exists");
     if (!doc) {
       let newUser = new UserModel({
         username: req.body.username,
