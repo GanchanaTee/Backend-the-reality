@@ -36,9 +36,9 @@ app.use(
 app.use(
   session({
     secret: process.env.SECRETCODE_SESSION,
-    resave: true,
+    resave: false,
     saveUninitialized: true,
-    cookie: {secure: true, httpOnly: true, sameSite:"none"}
+    cookie: {secure: true, httpOnly: true, sameSite:"none"},
   })
 );
 app.use(cookieParser("secretcode"));
