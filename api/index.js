@@ -10,6 +10,7 @@ const bodyParser = require('body-parser');
 const userRouter = require('../src/routes/user');
 
 const app = express();
+app.set("trust proxy", 1);
 
 // const isVercel = process.env.IS_VERCEL || false;
 // if (isVercel) {
