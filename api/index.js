@@ -38,8 +38,7 @@ app.use(
     secret: process.env.SECRETCODE_SESSION,
     resave: false,
     saveUninitialized: true,
-    cookie: {secure: true, httpOnly: true, sameSite:"none"},
-    store: new MongoStore({ mongooseConnection: mongoose.connection })
+    cookie: {secure: true, httpOnly: true, sameSite:"none"}
   })
 );
 app.use(cookieParser("secretcode"));
