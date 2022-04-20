@@ -30,6 +30,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(
   cors({
     origin: "https://final-project-the-reality.vercel.app", 
+    // origin: "http://localhost:4000", 
     credentials: true,
   })
 );
@@ -41,7 +42,7 @@ app.use(
     cookie: {secure: true, httpOnly: true, sameSite:"none"}
   })
 );
-app.use(cookieParser("secretcode"));
+app.use(cookieParser(process.env.SECRETCODE_SESSION));
 app.use(passport.initialize());
 app.use(passport.session());
 require("../src/passports/passportConfig")(passport);

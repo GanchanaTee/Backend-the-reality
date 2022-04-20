@@ -1,7 +1,9 @@
 const UserModel = require('../models/userModel');
 
 exports.checkSession = async (req, res, next) => {
+    // console.log("Checker",req)
     console.log(req.session);
+    // console.log("Checker",req.sessionStore);
      if(!req.session.passport) {
          res.status(401).send("Don't have permission to access data")
      } else {
