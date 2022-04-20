@@ -29,7 +29,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(
   cors({
-    origin: "https://final-project-the-reality.vercel.app/", 
+    origin: "https://final-project-the-reality.vercel.app", 
     credentials: true,
   })
 );
